@@ -11,7 +11,7 @@ const viewMode = inject<Ref<string>>('viewMode', ref('desktop'))
     :class="
       viewMode !== 'mobile'
         ? 'px-[40px] pt-[20px] pb-[80px] relative'
-        : 'px-[16px] pt-[16px] pb-[25px] top-0 fixed rounded-b-2xl bg-background drop-shadow-accent4/10 drop-shadow-md'
+        : 'px-[16px] pt-[16px] pb-[25px] top-0 fixed rounded-b-2xl bg-background z-50 drop-shadow-accent4/10 drop-shadow-md'
     "
   >
     <div class="flex flex-row items-center relative justify-between w-full">

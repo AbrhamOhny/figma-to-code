@@ -3,12 +3,14 @@ import CableIcon from '../icons/CableIcon.vue'
 import EarthIcon from '../icons/EarthIcon.vue'
 import AccountIcon from '../icons/AccountIcon.vue'
 import ChartIcon from '../icons/ChartIcon.vue'
-import { type Component } from 'vue'
+import Button from '../ButtonComp.vue'
+import { ref, inject, type Component, type Ref } from 'vue'
 interface _section {
   icon: Component
   title: string
   paragraph: string
 }
+const viewMode = inject<Ref<string>>('viewMode', ref('desktop'))
 const sections: _section[] = [
   {
     icon: CableIcon,
@@ -35,6 +37,12 @@ const sections: _section[] = [
       'Generate precise, visually compelling reports that illustrate your growth trajectories across all regions',
   },
 ]
+const highlights = [
+  'Spot Trends in Seconds: No more diggin through numbers',
+  'Get Everyone on the Same Page: Share easy-to-understand reports with your team.',
+  'Make Presentations Pop: Interactive maps and dashboards keep your audiance engaged.',
+  'Your Global Snapshots: Get a quick, clear overview of your entire operation.',
+]
 </script>
 <template>
   <div id="benefits" class="flex flex-col gap-5">
@@ -57,6 +65,36 @@ const sections: _section[] = [
           {{ section.paragraph }}
         </p>
       </div>
+    </div>
+    <div
+      class="w-full h-fit mt-10 mb-25 md:aspect-square lg:aspect-[60/31] rounded-4xl overflow-clip"
+    >
+      <img class="w-full h-full object-cover" src="/images/Hero Image-1.png" />
+    </div>
+    <div class="flex gap-10" :class="viewMode === 'desktop' ? 'flex-wrap' : 'flex-col'">
+      <div class="flex flex-col flex-2 gap-10 border-t border-accent5/20 py-15">
+        <h2 class="text-heading1">See the Big Picture</h2>
+        <p class="text-paragraph">
+          Area turns your data into clear, vibrant visuals that show you exactly what's happening in
+          each region.
+        </p>
+        <div class="flex flex-col">
+          <div
+            class="grid grid-cols-[auto_1fr] gap-8 py-5 text-paragraph text-accent4! border-t border-accent5/20"
+            v-for="(value, index) in highlights"
+            :key="index"
+          >
+            <span class="font-semibold text-accent5!">{{
+              String(index + 1).padStart(2, '0')
+            }}</span>
+            <p>{{ value }}</p>
+          </div>
+        </div>
+        <div>
+          <Button>Discover More</Button>
+        </div>
+      </div>
+      <img class="flex flex-1 object-cover" src="/images/Features carousel v1.png" />
     </div>
   </div>
 </template>
