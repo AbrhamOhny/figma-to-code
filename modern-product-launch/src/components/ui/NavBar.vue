@@ -21,7 +21,7 @@ const viewMode = inject<Ref<string>>('viewMode', ref('desktop'))
         v-if="viewMode !== 'mobile'"
       >
         <a href="#benefits">Benefits</a>
-        <button>Specifications</button>
+        <a href="#spec">Specifications</a>
         <button>How-to</button>
         <button>Contact Us</button>
       </div>

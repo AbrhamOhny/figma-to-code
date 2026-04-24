@@ -67,7 +67,7 @@ const highlights = [
       </div>
     </div>
     <div
-      class="w-full h-fit mt-10 mb-25 md:aspect-square lg:aspect-[60/31] rounded-4xl overflow-clip"
+      class="w-full h-fit mt-10 mb-25 md:aspect-square aspect-[9/16] md:aspect-square lg:aspect-[60/31] rounded-4xl overflow-clip"
     >
       <img class="w-full h-full object-cover" src="/images/Hero Image-1.png" />
     </div>

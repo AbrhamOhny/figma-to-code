@@ -2,11 +2,13 @@
 import { inject, ref, type Ref } from 'vue'
 import LandingPage from './LandingPage.vue'
 import BenefitsPage from './BenefitsPage.vue'
+import SpecificationPage from './SpecificationPage.vue'
 const viewMode = inject<Ref<string>>('viewMode', ref('desktop'))
 </script>
 <template>
   <article :class="viewMode !== 'mobile' ? 'px-[40px]' : 'px-[16px] mt-[120px]'">
     <LandingPage />
     <BenefitsPage />
+    <SpecificationPage />
   </article>
 </template>
