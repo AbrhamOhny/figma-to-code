@@ -114,7 +114,7 @@ const specs: _spec[] = [
       </p>
       <ButtonComp>Discover More</ButtonComp>
     </div>
-    <div class="flex flex-row mt-20 overflow-auto shrink-0">
+    <div class="flex py-1 px-1 flex-row mt-20 overflow-auto shrink-0">
       <div
         v-for="(value, index_parent) in specs"
         :key="index_parent"
