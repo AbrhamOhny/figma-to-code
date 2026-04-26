@@ -45,6 +45,14 @@ body {
   letter-spacing: -4.5%;
   line-height: 85%;
 }
+.text-heading1-paragraph {
+  font-family: 'DM Sans';
+  font-weight: normal;
+  font-size: 64px;
+  letter-spacing: -3%;
+  line-height: 95%;
+  @apply text-paragraph-color;
+}
 .text-heading1 {
   font-family: 'Crimson Text';
   font-weight: normal;
@@ -115,6 +123,14 @@ body {
     letter-spacing: -5%;
     line-height: 80%;
   }
+  .text-heading1-paragraph {
+    font-family: 'DM Sans';
+    font-weight: normal;
+    font-size: 80px;
+    letter-spacing: -3%;
+    line-height: 95%;
+    @apply text-paragraph-color;
+  }
   .text-heading1 {
     font-size: 54px;
     letter-spacing: -3%;
@@ -142,6 +158,14 @@ body {
     font-size: 80px;
     letter-spacing: -4%;
     line-height: 100%;
+  }
+  .text-heading1-paragraph {
+    font-family: 'DM Sans';
+    font-weight: normal;
+    font-size: 80px;
+    letter-spacing: -3%;
+    line-height: 95%;
+    @apply text-paragraph-color;
   }
   .text-display {
     font-size: 160px;

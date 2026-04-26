@@ -114,7 +114,7 @@ const specs: _spec[] = [
       </p>
       <ButtonComp>Discover More</ButtonComp>
     </div>
-    <div class="flex flex-row mt-20 shrink-0">
+    <div class="flex flex-row mt-20 overflow-auto shrink-0">
       <div
         v-for="(value, index_parent) in specs"
         :key="index_parent"
@@ -152,9 +152,9 @@ const specs: _spec[] = [
       </div>
     </div>
     <div class="flex gap-10 my-30" :class="viewMode === 'desktop' ? 'flex-wrap' : 'flex-col'">
-      <img class="flex flex-1 object-cover" src="/images/Image-1.png" />
+      <img class="flex shrink object-cover" src="/images/Image-1.png" />
       <div
-        class="flex flex-col flex-1 border-t border-accent5/20 gap-10 justify-center"
+        class="flex flex-col flex-1 grow min-w-0 border-t border-accent5/20 gap-10 justify-center"
         :class="viewMode !== 'desktop' ? 'my-5 pt-10' : ''"
       >
         <p class="text-heading2">
