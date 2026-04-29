@@ -18,10 +18,10 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return JsonResponse(["response" => "success"]);
+            return response()->json(["response" => "success"]);
         }
-        return JsonResponse([
-            "response" => 'The provided credentials do not match our records.',
+        return response()->json([
+            "response" => 'authenticate',
         ]);
     }
 }

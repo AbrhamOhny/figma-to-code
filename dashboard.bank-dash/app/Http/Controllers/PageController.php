@@ -10,6 +10,6 @@ class PageController extends Controller
 {
     public function dashboard(): Response
     {
-        return Inertia::render('Home');
+        return Inertia::render('dashboard/Home');
     }
 }

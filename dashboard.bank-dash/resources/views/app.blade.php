@@ -11,7 +11,7 @@
     <script>
         (function() {
             var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            document.documentElement.dataset.theme = dark ? "dark" : "light";
+            document.body.dataset.theme = dark ? "dark" : "light";
         })();
     </script>
 </html>

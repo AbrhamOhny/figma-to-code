@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: hsl(216, 33.33%, 97.06%);
-  --color-background-darker: hsl(204, 42.86%, 93.14%);
-  --color-primary: hsl(225.43, 100%, 58.82%);
+    --color-background-lighter: hsl(216, 33.33%, 97.06%);
+    --color-background: hsl(216, 33.33%, 90.06%);
+    --color-background-darker: hsl(204, 42.86%, 93.14%);
+    --color-primary: hsl(225.43, 100%, 58.82%);
 
-  --color-primary2: hsl(231.11, 34.18%, 30.98%);
+    --color-primary2: hsl(231.11, 34.18%, 30.98%);
 
-  --color-secondary: hsl(351.48, 98.78%, 67.84%);
-  --color-accent: hsl(39.43, 99.19%, 51.57%);
+    --color-secondary: hsl(351.48, 98.78%, 67.84%);
+    --color-accent: hsl(39.43, 99.19%, 51.57%);
+
+    --color-error: var(--color-rose-950);
+    --color-warning: var(--color-amber-900);
+    --color-success: var(--color-lime-800);
 }
 
 [data-theme="dark"] {
-  --color-background: hsl(231.11, 34.18%, 30.98%);
-  --color-background-darker: hsl(204, 42.86%, 6.86%);
-  --color-primary: hsl(225.43, 100%, 58.82%);
+    --color-background-lighter: hsl(231.11, 34.18%, 15.98%);
+    --color-background: hsl(231.11, 34.18%, 10.98%);
+    --color-background-darker: hsl(204, 42.86%, 0%);
+    --color-primary: hsl(225.43, 100%, 58.82%);
 
-  --color-primary2: hsl(204, 42.86%, 93.14%);
+    --color-primary2: hsl(204, 42.86%, 93.14%);
 
-  --color-secondary: hsl(351.48, 98.78%, 67.84%);
-  --color-accent: hsl(39.43, 99.19%, 51.57%);
+    --color-secondary: hsl(351.48, 98.78%, 67.84%);
+    --color-accent: hsl(39.43, 99.19%, 51.57%);
+
+    --color-error: var(--color-rose-800);
+    --color-warning: var(--color-amber-700);
 }
 body {
-  @apply bg-background-darker text-primary2;
+    @apply bg-background-darker text-primary2;
+}
+label {
+    @apply select-none;
+}
+button,
+input,
+.msg {
+    transition-property: opacity, color, opacity, outline, border;
+    transition-duration: 250ms, 100ms, 100ms, 50ms, 50ms;
+    transition-timing-function: ease-in-out;
+}
+input {
+    @apply border-0 outline-0;
+}
+input + .msg {
+    @apply absolute -bottom-7 right-0 opacity-0;
+}
+input[data-note="warn"] {
+    @apply outline-2 outline-warning!;
+}
+input[data-note="warn"] + .msg {
+    @apply text-warning opacity-100;
+}
+input[data-note="error"] {
+    @apply outline-2 outline-error!;
+}
+input[data-note="error"] + .msg {
+    @apply text-error opacity-100;
+}
+input[data-note="success"] {
+    @apply outline-2 outline-success!;
+}
+input[data-note="success"] + .msg {
+    @apply text-warning opacity-100;
+}
+button:not(.no-decoration):not(:disabled):hover,
+button:not(.no-decoration):not(:disabled):focus,
+input:not(:disabled):hover,
+input:not(:disabled):focus {
+    @apply outline-2 outline-offset-2 outline-primary2;
 }
