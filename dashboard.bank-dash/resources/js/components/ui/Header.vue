@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { onMounted, inject, ref, type Ref } from "vue";
 const viewMode = inject<Ref<string | undefined>>("viewMode", ref(undefined));
+const emit = defineEmits(["toggleNav"]);
 onMounted(() => {
     const header: HTMLElement | null = document.querySelector("header");
     document.documentElement.style.setProperty("--header-height", `${header?.offsetHeight}px`);
@@ -10,12 +11,13 @@ onMounted(() => {
     <header
         class="absolute z-40 top-0 px-5 py-3 flex flex-row items-center justify-between bg-background-lighter"
     >
-        <div
+        <button
+            @click="emit('toggleNav')"
             class="aspect-square p-2 rounded-full hover:bg-background-darker"
             v-if="viewMode === 'mobile'"
         >
             <Icon icon="ic:round-menu" width="24" height="24" />
-        </div>
+        </button>
         <div class="text-xl font-semibold"><slot /></div>
         <div class="flex flex-row items-center gap-5">
             <div
