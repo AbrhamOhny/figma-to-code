@@ -1,6 +1,6 @@
 # [modern-product-launch](https://www.figma.com/community/file/1487309170684591074/modern-product-launch)
 
-![Preview](https://github.com/AbrhamOhny/figma-to-code/blob/main/%5Blanding-page%5Dmodern-product-launch/preview/1.png)
+![Preview](https://raw.githubusercontent.com/AbrhamOhny/design-to-code/refs/heads/main/landing-page.modern-product-launch/preview/1.png)
 
 https://www.figma.com/community/file/1487309170684591074/modern-product-launch
 
