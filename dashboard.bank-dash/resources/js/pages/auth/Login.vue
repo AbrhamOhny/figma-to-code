@@ -41,7 +41,7 @@ function handleLogin() {
                 });
             } else {
                 email.note = "error";
-                email.msg = "Provided credentials does not matches our records";
+                email.msg = "Provided credentials does not matches";
             }
         })
         .catch((error) => {
@@ -59,7 +59,9 @@ function handleChange(_model: _inModel) {
 
 <template>
     <div class="flex flex-col w-full h-full justify-center items-center">
-        <div class="flex flex-col w-fit h-fit gap-10 p-5 rounded-xl bg-background-lighter">
+        <div
+            class="flex flex-col h-fit gap-10 p-5 rounded-xl bg-background-lighter w-full md:w-1/3"
+        >
             <div class="text-xl select-none font-semibold">Bankdash</div>
             <form @submit.prevent="handleLogin" class="flex flex-col">
                 <div class="flex flex-row gap-5 items-center relative mb-10">
@@ -67,7 +69,7 @@ function handleChange(_model: _inModel) {
                     <input
                         @input="handleChange(email)"
                         :data-note="email.note"
-                        class="flex-1 bg-background rounded-lg px-3 py-1"
+                        class="flex-3 bg-background rounded-lg px-3 py-1"
                         id="email"
                         type="email"
                         v-model="email.input"
@@ -79,7 +81,7 @@ function handleChange(_model: _inModel) {
                     <input
                         @input="handleChange(password)"
                         :data-note="password.note"
-                        class="flex-1 bg-background rounded-lg px-3 py-1"
+                        class="flex-3 bg-background rounded-lg px-3 py-1"
                         id="password"
                         :type="isPasswordHidden ? 'password' : 'text'"
                         v-model="password.input"

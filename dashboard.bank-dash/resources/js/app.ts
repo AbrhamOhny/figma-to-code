@@ -5,6 +5,8 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import DashboardLayout from "./pages/layout/DashboardLayout.vue";
 import { Icon } from "@iconify/vue";
 
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
 createInertiaApp({
     resolve: async (name) => {
         const page = await resolvePageComponent(
@@ -17,9 +19,11 @@ createInertiaApp({
         return page;
     },
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
+        const app = createApp({ render: () => h(App, props) })
             .use(plugin)
-            .component("Icon", Icon)
-            .mount(el);
+            .provide("capitalize", capitalize)
+            .component("Icon", Icon);
+        app.config.globalProperties.$capitalize = capitalize;
+        app.mount(el);
     },
 });
