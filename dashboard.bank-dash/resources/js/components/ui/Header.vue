@@ -43,9 +43,14 @@ onMounted(() => {
             >
                 <Icon icon="ic:baseline-notifications-none" width="18" height="18" />
             </div>
+            <div class="aspect-square overflow-clip rounded-full bg-background-darker">
+                <img width="32" height="32" src="/public/m7th-1-1.png" />
+            </div>
+            <!-- No profile picture default
             <div class="aspect-square p-2 rounded-full bg-background-darker">
                 <Icon icon="ic:baseline-person" width="24" height="24" />
             </div>
+            -->
         </div>
     </header>
 </template>
