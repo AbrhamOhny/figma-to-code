@@ -15,6 +15,9 @@
     --color-error: var(--color-rose-950);
     --color-warning: var(--color-amber-900);
     --color-success: var(--color-lime-800);
+
+    --color-customgradient-start: hsl(241.1, 82%, 60.78%);
+    --color-customgradient-end: hsl(241.01, 95.2%, 49.02%);
 }
 
 [data-theme="dark"] {
@@ -69,6 +72,7 @@
         width: 100%;
     }
 }
+
 main {
     @apply w-full h-full;
 }
@@ -130,4 +134,8 @@ button:not(.no-decoration):not(:disabled):focus,
 input:not(.no-decoration):not(:disabled):hover,
 input:not(.no-decoration):not(:disabled):focus {
     @apply outline-2 outline-offset-2;
+}
+
+.custom-gradient {
+    @apply bg-linear-to-br from-customgradient-start to-customgradient-end;
 }
