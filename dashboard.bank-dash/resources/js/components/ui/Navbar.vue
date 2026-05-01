@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import Header from "./Header.vue";
+import DashboardRoutes from "../DashboardRoutes.vue";
 import { inject, watch, ref, type Ref } from "vue";
 import { usePage } from "@inertiajs/vue3";
 
@@ -29,6 +30,7 @@ watch(isNavOpened, (newVal) => {
             <div class="py-5 px-3 mb-3 w-full flex justify-center text-xl font-semibold">
                 BankDash
             </div>
+            <DashboardRoutes :current-route="page.url" />
         </div>
         <Header @toggleNav="toggleNav">{{ $capitalize(page.props.routeName) }}</Header>
     </nav>

@@ -33,12 +33,12 @@
     --color-warning: var(--color-amber-500);
 }
 :root {
-    --navwidth: calc(1 / 4 * 100%);
+    --navwidth: initial;
     --header-height: initial;
 }
 @media (width>=48rem) {
     :root {
-        --navwidth: calc(1 / 8 * 100%);
+        --navwidth: calc(3 / 10 * 100%);
     }
     header {
         width: calc(100% - var(--navwidth));
@@ -48,6 +48,11 @@
         width: calc(100% - var(--navwidth));
         min-height: calc(100% - var(--header-height));
         left: var(--navwidth);
+    }
+}
+@media (width > 64rem) {
+    :root {
+        --navwidth: calc(2 / 10 * 100%);
     }
 }
 @media (width < 48rem) {
@@ -90,7 +95,7 @@ button {
     @apply outline-primary2-darker border-0;
 }
 input {
-    @apply border-0 outline-0;
+    @apply border-0 outline-0 outline-primary2-darker;
 }
 input + .msg {
     @apply absolute -top-6 right-0 opacity-0 text-sm;
