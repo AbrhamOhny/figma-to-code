@@ -1,0 +1,1 @@
+<template>Privileges View</template>

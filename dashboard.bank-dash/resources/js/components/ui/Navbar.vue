@@ -30,7 +30,7 @@ watch(isNavOpened, (newVal) => {
             <div class="py-5 px-3 mb-3 w-full flex justify-center text-xl font-semibold">
                 BankDash
             </div>
-            <DashboardRoutes :current-route="page.url" />
+            <DashboardRoutes />
         </div>
         <Header @toggleNav="toggleNav">{{ $capitalize(page.props.routeName) }}</Header>
     </nav>

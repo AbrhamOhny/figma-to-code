@@ -1,0 +1,1 @@
+<template>Investments View</template>

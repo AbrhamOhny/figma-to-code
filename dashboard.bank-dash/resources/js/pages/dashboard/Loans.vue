@@ -1,0 +1,1 @@
+<template>Loans View</template>

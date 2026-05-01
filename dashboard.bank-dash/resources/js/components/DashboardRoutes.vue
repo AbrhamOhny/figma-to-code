@@ -1,69 +1,82 @@
 <script lang="ts" setup>
-const { currentRoute = "" } = defineProps<{
-    currentRoute: string;
-}>();
+import { usePage, router } from "@inertiajs/vue3";
+import { computed } from "vue";
+const page = usePage();
+
+const currentPath = computed(() => page.url);
+const __routes = page.props.dashboardRoutes as Record<string, string>;
 const routes: Array<Record<string, string>> = [
     {
-        link: "/",
+        link: __routes.home!,
         name: "Dashboard",
         icon: "ic:baseline-home",
     },
     {
-        link: "",
+        link: __routes.transactions!,
         name: "Transactions",
         icon: "mdi:cash-sync",
     },
     {
-        link: "",
+        link: __routes.accounts!,
         name: "Accounts",
         icon: "ic:baseline-person",
     },
     {
-        link: "",
+        link: __routes.investments!,
         name: "Investments",
         icon: "mdi:chart-finance",
     },
     {
-        link: "",
+        link: __routes.cards!,
         name: "Credit Cards",
         icon: "mdi:card-bulleted",
     },
     {
-        link: "",
+        link: __routes.loans!,
         name: "Loans",
         icon: "mdi:hand-coin",
     },
     {
-        link: "",
+        link: __routes.services!,
         name: "Services",
         icon: "mdi:customer-service",
     },
     {
-        link: "",
+        link: __routes.privileges!,
         name: "My Privileges",
         icon: "mdi:checkers-outline",
     },
     {
-        link: "",
+        link: __routes.settings!,
         name: "Settings",
         icon: "mdi:gear",
     },
 ];
+function getPath(url: string) {
+    return new URL(url).pathname;
+}
+function handleVisit(url: string) {
+    router.visit(url);
+}
 </script>
 <template>
-    <a
-        class="relative pl-10 py-4 flex flex-row gap-5 items-center"
+    <button
+        class="no-decoration relative pl-10 py-4 flex flex-row gap-5 items-center"
         v-for="route in routes"
-        :class="currentRoute === route.link ? 'text-primary font-semibold' : 'hover:text-primary'"
-        :href="route.link"
+        :class="
+            currentPath === getPath(route.link!)
+                ? 'text-primary font-semibold'
+                : 'hover:text-primary'
+        "
+        @click="handleVisit(route.link!)"
     >
         <div
             class="absolute left-0 w-1.25 bg-primary h-full rounded-tr-full rounded-br-full"
-            v-if="currentRoute === route.link"
+            v-if="currentPath === getPath(route.link!)"
         ></div>
         <Icon :icon="route.icon" width="24" height="24" />
         <span>
             {{ route.name }}
         </span>
-    </a>
+    </button>
 </template>

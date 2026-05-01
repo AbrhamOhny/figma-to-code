@@ -1,0 +1,1 @@
+<template>Accounts View</template>

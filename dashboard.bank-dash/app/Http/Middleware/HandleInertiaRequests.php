@@ -35,8 +35,26 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return array_merge(parent::share($request), [
+        $to_return = [
             'routeName' => $request->route()?->getName(),
-        ]);
+            'currentUrl' => url()->current()
+        ];
+        if (auth()->check()) {
+            $to_return = array_merge($to_return, [
+                'dashboardRoutes' => [
+                    'home' => route('overview'),
+                    'transactions' => route('transactions'),
+                    'accounts' => route('accounts'),
+                    'investments' => route('investments'),
+                    'cards' => route('credit cards'),
+                    'loans' => route('loans'),
+                    'services' => route('services'),
+                    'privileges' => route('privileges'),
+                    'settings' => route('settings'),
+                    'deauthenticate' => route('deauthenticate')
+                ]
+            ]);
+        }
+        return array_merge(parent::share($request), $to_return);
     }
 }
