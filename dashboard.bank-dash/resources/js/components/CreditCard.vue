@@ -41,7 +41,7 @@ const slicedUID = computed(() => {
                     <span class="text-xs font-light">Balance</span>
                     <span class="text-md font-semibold">{{ `${currency}${balance}` }}</span>
                 </div>
-                <div>[ICON]</div>
+                <Icon icon="mdi:integrated-circuit-chip" width="32" height="32" />
             </div>
             <div class="flex flex-row flex-1 items-center">
                 <div class="flex flex-col flex-1 gap-1">
@@ -67,7 +67,7 @@ const slicedUID = computed(() => {
         >
             <div class="flex flex-row justify-between">
                 <span class="text-lg font-semibold">{{ slicedUID!.join(" ") }}</span>
-                <div>[ICON]</div>
+                <Icon icon="grommet-icons:mastercard" width="32" />
             </div>
         </div>
     </div>
