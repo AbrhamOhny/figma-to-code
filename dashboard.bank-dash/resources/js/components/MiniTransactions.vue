@@ -67,10 +67,10 @@ const iconColor = computed(() => {
             class="flex items-center justify-center p-4 rounded-full overflow-clip text-background"
             :style="`background-color: ${iconColor[0]}; color: ${iconColor[1]}`"
         >
-            <Icon :icon="iconName" width="24" height="24" />
+            <Icon :icon="iconName" width="20" height="20" />
         </div>
         <div class="flex flex-2 flex-col gap-2">
-            <span>{{ getDescription }}</span>
+            <span class="text-sm">{{ getDescription }}</span>
             <span class="text-sm text-primary2-darker">{{
                 date.toLocaleDateString("en-GB", {
                     day: "2-digit",
@@ -80,7 +80,7 @@ const iconColor = computed(() => {
             }}</span>
         </div>
         <div class="flex flex-1 justify-end">
-            <span :class="`${isIncome === 1 ? 'text-income' : 'text-outcome'}`">{{
+            <span class="text-sm" :class="`${isIncome === 1 ? 'text-income' : 'text-outcome'}`">{{
                 `${isIncome === 1 ? "+" : "-"} $${amount}`
             }}</span>
         </div>

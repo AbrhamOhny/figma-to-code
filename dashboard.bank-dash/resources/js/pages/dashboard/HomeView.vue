@@ -30,8 +30,8 @@ const latestTransactions = [
 <template>
     <div class="flex flex-col gap-5">
         <!-- Section 1: Cards & Recent transaction -->
-        <div class="flex flex-col md:flex-row w-full gap-5 overflow-x-auto">
-            <div class="flex flex-col gap-5 flex-1/2">
+        <div class="flex flex-col lg:flex-row w-full gap-5 overflow-x-auto">
+            <div class="flex flex-col gap-5 flex-2">
                 <div class="flex flex-row items-center justify-between text-lg font-semibold">
                     <h1 class="text-lg font-semibold">My Cards</h1>
                     <span>See All</span>
@@ -68,6 +68,10 @@ const latestTransactions = [
                     />
                 </div>
             </div>
+        </div>
+        <!-- Section 2: Weekly Activity & Expense Statistics -->
+        <div class="flex flex-col lg:flex-row w-full gap-5 overflow-x-auto">
+            <div class="flex flex-col bg-background-lighter"></div>
         </div>
     </div>
 </template>
