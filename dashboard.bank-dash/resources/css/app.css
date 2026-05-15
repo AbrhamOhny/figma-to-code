@@ -7,6 +7,7 @@
     --color-primary: hsl(225.43, 100%, 58.82%);
 
     --color-primary2: hsl(231.11, 34.18%, 30.98%);
+    --color-primary2-lighter: hsl(231.11, 34.18%, 70.98%);
     --color-primary2-darker: hsl(231.11, 34.18%, 15.14%);
 
     --color-secondary: hsl(351.48, 98.78%, 67.84%);
@@ -32,6 +33,7 @@
     --color-primary: hsl(225.43, 100%, 58.82%);
 
     --color-primary2: hsl(204, 42.86%, 93.14%);
+    --color-primary2-lighter: hsl(204, 42.86%, 99.14%);
     --color-primary2-darker: hsl(204, 10.86%, 53.14%);
 
     --color-secondary: hsl(351.48, 98.78%, 67.84%);

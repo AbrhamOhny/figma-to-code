@@ -62,7 +62,7 @@ const iconColor = computed(() => {
 });
 </script>
 <template>
-    <div class="flex flex-row items-center gap-5">
+    <div class="flex flex-row items-center gap-5 shrink-0">
         <div
             class="flex items-center justify-center p-4 rounded-full overflow-clip text-background"
             :style="`background-color: ${iconColor[0]}; color: ${iconColor[1]}`"

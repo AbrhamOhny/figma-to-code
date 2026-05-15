@@ -6,7 +6,6 @@ const name = "Test";
 const balance = 1500;
 const valid = new Date("2030-12");
 const uniqueID = 3778123412341234;
-
 const latestTransactions = [
     {
         amount: 850,
@@ -53,12 +52,12 @@ const latestTransactions = [
                     />
                 </div>
             </div>
-            <div class="flex flex-col gap-5 flex-1">
+            <div class="flex flex-col gap-5 shrink-0">
                 <div class="flex flex-row items-center justify-between text-lg font-semibold">
                     <h1>Recent Transaction</h1>
                 </div>
 
-                <div class="flex flex-col gap-5 p-5 rounded-2xl bg-background-lighter">
+                <div class="flex flex-col gap-5 p-5 rounded-2xl bg-background-lighter shrink-0">
                     <MiniTransactions
                         v-for="(item, index) in latestTransactions"
                         :key="index"
