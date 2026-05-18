@@ -31,12 +31,11 @@ function toggleDataset(index: number) {
         chart.setDatasetVisibility(index, false);
     }
 
-    // Reassign to trigger Vue reactivity on the Set
     hiddenDatasets.value = new Set(hiddenDatasets.value);
     chart.update();
 }
 const chartLabels = getWeekdays();
-const props = defineProps<{
+const { income, expense } = defineProps<{
     income: FixedLengthArray<number, 7>;
     expense: FixedLengthArray<number, 7>;
 }>();
@@ -69,14 +68,14 @@ const chartData = computed(() => {
         datasets: [
             {
                 label: "Income",
-                data: props.income,
+                data: income,
                 backgroundColor: incomeColor.value,
                 borderRadius: 100,
                 borderSkipped: false,
             },
             {
                 label: "Expense",
-                data: props.expense,
+                data: expense,
                 backgroundColor: expenseColor.value,
                 borderRadius: 100,
                 borderSkipped: false,
@@ -105,6 +104,9 @@ const chartOptions = computed(() => {
             colors: {
                 enabled: false,
             },
+            datalabels: {
+                display: false,
+            },
         },
     };
 });
@@ -113,7 +115,7 @@ const chartOptions = computed(() => {
     <div class="flex flex-col w-full gap-3">
         <div class="flex flex-row w-full gap-5 justify-end">
             <div
-                class="flex flex-row items-center gap-2 legend-item select-none cursor-pointer rounded-full outline-2 pr-3 py-1 pl-3 font-semibold"
+                class="flex flex-row items-center gap-2 legend-item select-none cursor-pointer rounded-full outline-2 -outline-offset-1 pr-3 py-1 pl-3 font-semibold"
                 :style="{
                     outlineColor: dataset.backgroundColor,
                     backgroundColor: hiddenDatasets.has(index)
@@ -143,6 +145,6 @@ const chartOptions = computed(() => {
                 </span>
             </div>
         </div>
-        <Bar ref="chartRef" :data="chartData" :options="chartOptions" />
+        <Bar class="w-full" ref="chartRef" :data="chartData" :options="chartOptions" />
     </div>
 </template>
